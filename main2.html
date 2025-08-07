@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Prompt Generator</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <div class="container">
+   
+    <h1>AI Prompt Generator</h1>
+
+    <label for="category">Choose a category:</label>
+    <select id="category">
+      <option value="writing">Writing</option>
+      <option value="coding">Coding</option>
+      <option value="image">Image</option>
+      <option value="music">Music</option>
+      <option value="video">Video</option>
+      <option value="general">General</option>
+      <option value="custom">Custom</option>
+      <option value="business">Business</option>
+      <option value="education">Education</option>
+      <option value="other">Other</option>
+    </select>
+
+    <input type="text" id="inputText" placeholder="Enter a topic (optional)" />
+
+    <button onclick="generatePrompt()">Generate Prompt</button>
+
+    <div id="outputBox">
+      <p id="info">Click again on Generate prompt to get more effective prompts.</p>
+      <p id="output">Your prompt will appear here...</p>
+      <button onclick="copyPrompt()">Copy</button>
+    </div>
+    <div class="links">
+    <div class="social-links">
+    <a href="https://chatgpt.com/" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="Chat-gpt" width="40" />
+    </a>
+    <a href="https://deepmind.google/models/gemini/" target="_blank">
+      <img src="https://it.wisc.edu/wp-content/uploads/Google-Gemini-1080x480-News-Image.jpg" alt="gemini" width="40" height="40"/>
+    </a>
+    <a href="https://www.anthropic.com/claude" target="_blank">
+      <img src="https://i.gzn.jp/img/2024/11/15/anthropic-claude-nuclear-info/00.png" alt="WhatsApp" width="40" height="40"/>
+    </a>
+    <a href="https://copilot.microsoft.com/chats/D3CVhToeoH1CL2cyDkVGR">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Microsoft_Copilot_Icon.svg/1200px-Microsoft_Copilot_Icon.svg.png" alt="Email" width="40" />
+    </div>
+    </a>
+  </div>
+  </div>
+   <img id="image" src="undraw_chore-list_ylw0.svg" alt="Sample Image"> 
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
