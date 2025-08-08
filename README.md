@@ -4,7 +4,7 @@ The **AI Prompt Generator** is a web-based tool designed to help users create hi
 
 ---
 
-* https://shantanu994.github.io/AI-Prompt-Generator/ *
+* https://shantanu994.github.io/AI-Prompt-Generator/ 
 
 ---
 
@@ -14,7 +14,7 @@ The **AI Prompt Generator** is a web-based tool designed to help users create hi
 -  Intelligent suggestions for various use cases (coding, writing, learning, etc.)
 -  User-friendly interface with real-time interaction
 -  Beautiful gradient UI with hover effects and responsive design
--  "Regenerate" button to refresh the prompt without repetition
+-  Click on the same button to refresh the prompt without repetition
 
 ---
 
