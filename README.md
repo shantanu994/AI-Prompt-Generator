@@ -4,7 +4,7 @@ The **AI Prompt Generator** is a web-based tool designed to help users create hi
 
 ---
 
-[🔗 Visit the AI Prompt Generator](#) *https://shantanu994.github.io/AI-Prompt-Generator/*
+* https://shantanu994.github.io/AI-Prompt-Generator/ *
 
 ---
 
