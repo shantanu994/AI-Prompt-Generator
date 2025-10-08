@@ -21,6 +21,7 @@ The **AI Prompt Generator** is a web-based tool designed to help users create hi
 ## Tech Stack
 
 - **Frontend:** HTML, CSS, JavaScript
+- **React Version:** Currently converting this project to React for enhanced functionality and better component architecture
 
 ---
 
