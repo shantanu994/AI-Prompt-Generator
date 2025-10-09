@@ -1,38 +1,270 @@
+/* Landing Page Styles */
+.landing-page {
+  font-family: "segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #a5b4fc, #6ee7b7);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.navbar {
+  font-size: 50px;
+  margin: 30px;
+  padding: 20px;
+  position: relative;
+  font-family: "bebas neue", sans-serif;
+  color: black;
+}
+
+.navbar:hover {
+  color: white;
+  text-shadow: 0 4px 12px black;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.side-image {
+  width: 400px;
+  height: 400px;
+  border-radius: 8px;
+  margin-left: 100px;
+  margin-right: 200px;
+  border: 1px solid black;
+}
+
+.side-image:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+.text-content {
+  font-size: 30px;
+  margin-left: 30px;
+  font-family: "segoe UI", sans-serif;
+}
+
+.text-content:hover {
+  text-shadow: 0 4px 12px white;
+}
+
+#about {
+  padding: 30px;
+  margin: 20px;
+  margin-top: 100px;
+  background: #fff8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#about:hover {
+  box-shadow: 0 6px 16px lightcoral;
+}
+
+#about h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: auto;
+}
+
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links a {
+  margin: 0 10px;
+  display: inline-block;
+  transition: transform;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+}
+
+.next-button {
+  text-align: center;
+  margin-top: 90px;
+}
+
+.next-button button {
+  padding: 20px 40px;
+  font-size: 20px;
+  background: linear-gradient(120deg, #538bbf, #a5b4fc);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.next-button button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Generator Page Styles */
+.generator-page {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(120deg, #FFDEE9, #B5FFFC);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+}
+
+.generator-container {
+  background: #fff;
+  height: 600px;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+#image {
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  margin-left: 100px;
+}
+
+#image:hover {
+  box-shadow: 0 6px 20px black;
+}
+
+.generator-container h1 {
+  color: #333;
+  font-size: 2.5em;
+  margin-bottom: 60px;
+}
+
+.generator-container select, 
+.generator-container input, 
+.generator-container button {
+  margin: 10px 0;
+  padding: 12px;
+  font-size: 16px;
+  width: 80%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.generator-container button {
+  background: linear-gradient(120deg, #ff7e5f, #feb47b);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.generator-container button:hover {
+  transform: scale(1.05);
+}
+
+#outputBox {
+  margin-top: 20px;
+}
+
+#output {
+  font-weight: bold;
+  color: #333;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  margin: 10px 0;
+  min-height: 60px;
+  border: 1px solid #ddd;
+}
+
+#info {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.links {
+  display: inline-block;
+  background-color: lightblue;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: black 1px solid;
+  margin-top: 10px;
+}
+
+.links:hover {
+  transition: background-color 0.3s ease;
+}
+
+.back-button {
+  background: linear-gradient(120deg, #667eea, #764ba2) !important;
+  margin-top: 20px !important;
+  padding: 10px 20px !important;
+  font-size: 14px !important;
+  width: auto !important;
+}
+
+.back-button:hover {
+  transform: scale(1.05);
+}
+
+/* App Container */
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .side-image {
+    margin: 20px 0;
+    width: 300px;
+    height: 300px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .text-content {
+    font-size: 24px;
+    margin-left: 0;
+  }
+  
+  .navbar {
+    font-size: 36px;
+    margin: 20px;
+  }
+  
+  .generator-page {
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  #image {
+    width: 300px;
+    height: 300px;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  
+  .generator-container {
+    width: 100%;
+    height: auto;
+    max-width: none;
   }
 }
