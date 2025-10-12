@@ -6,6 +6,9 @@ function App() {
   const [category, setCategory] = useState('writing');
   const [inputText, setInputText] = useState('');
   const [output, setOutput] = useState('Your prompt will appear here...');
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [promptHistory, setPromptHistory] = useState([]);
+  const [showHistory, setShowHistory] = useState(false);
   const [usedPrompts] = useState({
     writing: [],
     coding: [],
@@ -105,7 +108,29 @@ function App() {
     usedPrompts[category].push(randomTemplate);
 
     const finalPrompt = randomTemplate.replace(/\{input\}/g, userInput);
-    setOutput(finalPrompt);
+    
+    // Add a slight delay for better UX
+    setTimeout(() => {
+      setOutput(finalPrompt);
+      // Add to history
+      const historyItem = {
+        id: Date.now(),
+        prompt: finalPrompt,
+        category: category,
+        input: userInput,
+        timestamp: new Date().toLocaleTimeString()
+      };
+      setPromptHistory(prev => [historyItem, ...prev.slice(0, 9)]); // Keep last 10 prompts
+      
+      // Add generated class for animation
+      const outputElement = document.getElementById('output');
+      if (outputElement) {
+        outputElement.classList.add('generated');
+        setTimeout(() => {
+          outputElement.classList.remove('generated');
+        }, 800);
+      }
+    }, 100);
   };
 
   const copyPrompt = () => {
@@ -114,14 +139,35 @@ function App() {
       .catch(() => alert("Copy failed."));
   };
 
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  const toggleHistory = () => {
+    setShowHistory(!showHistory);
+  };
+
+  const useHistoryPrompt = (prompt) => {
+    setOutput(prompt);
+    setShowHistory(false);
+  };
+
+  const clearHistory = () => {
+    setPromptHistory([]);
+    setShowHistory(false);
+  };
+
   const LandingPage = () => (
-    <div className="landing-page">
+    <div className={`landing-page ${isDarkMode ? 'dark-mode' : ''}`}>
       <nav className="navbar">
         <div className="navbar_container">
           <span className="navbar_logo">
             <i className="fa-solid fa-hexagon-nodes"></i>
             AI Prompt Generator
           </span>
+          <button className="dark-mode-toggle" onClick={toggleDarkMode}>
+            <i className={isDarkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'}></i>
+          </button>
         </div>
       </nav>
       <div className="container">
@@ -207,8 +253,11 @@ function App() {
   );
 
   const GeneratorPage = () => (
-    <div className="generator-page">
+    <div className={`generator-page ${isDarkMode ? 'dark-mode' : ''}`}>
       <div className="generator-container">
+        <button className="dark-mode-toggle generator-toggle" onClick={toggleDarkMode}>
+          <i className={isDarkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'}></i>
+        </button>
         <h1>AI Prompt Generator</h1>
 
         <label htmlFor="category">Choose a category:</label>
@@ -242,7 +291,40 @@ function App() {
         <div id="outputBox">
           <p id="info">Click again on Generate prompt to get more effective prompts.</p>
           <p id="output">{output}</p>
-          <button onClick={copyPrompt}>Copy</button>
+          <div className="output-actions">
+            <button onClick={copyPrompt}>Copy</button>
+            <button onClick={toggleHistory} className="history-btn">
+              <i className="fa-solid fa-history"></i> History ({promptHistory.length})
+            </button>
+          </div>
+          
+          {showHistory && (
+            <div className="history-panel">
+              <div className="history-header">
+                <h3>Recent Prompts</h3>
+                <button onClick={clearHistory} className="clear-history">
+                  <i className="fa-solid fa-trash"></i>
+                </button>
+              </div>
+              {promptHistory.length === 0 ? (
+                <p className="no-history">No prompts generated yet!</p>
+              ) : (
+                <div className="history-list">
+                  {promptHistory.map((item) => (
+                    <div key={item.id} className="history-item">
+                      <div className="history-content">
+                        <span className="history-category">{item.category}</span>
+                        <span className="history-time">{item.timestamp}</span>
+                        <p className="history-prompt" onClick={() => useHistoryPrompt(item.prompt)}>
+                          {item.prompt}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
         </div>
         
         <div className="links">
