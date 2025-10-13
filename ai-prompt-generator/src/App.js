@@ -96,7 +96,6 @@ function App() {
     if (!userInput) {
       userInput = getRandomWord();
     }
-
     const available = templates[category].filter(t => !usedPrompts[category].includes(t));
 
     if (available.length === 0) {
