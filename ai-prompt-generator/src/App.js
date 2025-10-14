@@ -164,7 +164,7 @@ function App() {
             <i className="fa-solid fa-hexagon-nodes"></i>
             AI Prompt Generator
           </span>
-          <button className="dark-mode-toggle" onClick={toggleDarkMode}>
+          <button type="button" className="dark-mode-toggle" onClick={toggleDarkMode}>
             <i className={isDarkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'}></i>
           </button>
         </div>
@@ -184,7 +184,7 @@ function App() {
         />
       </div>
       <div className="next-button">
-        <button onClick={() => setCurrentView('generator')}>
+        <button type="button" onClick={() => setCurrentView('generator')}>
           Go to Prompt Generator →
         </button>
       </div>
@@ -254,7 +254,7 @@ function App() {
   const GeneratorPage = () => (
     <div className={`generator-page ${isDarkMode ? 'dark-mode' : ''}`}>
       <div className="generator-container">
-        <button className="dark-mode-toggle generator-toggle" onClick={toggleDarkMode}>
+        <button type="button" className="dark-mode-toggle generator-toggle" onClick={toggleDarkMode}>
           <i className={isDarkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'}></i>
         </button>
         <h1>AI Prompt Generator</h1>
@@ -285,14 +285,14 @@ function App() {
           onChange={(e) => setInputText(e.target.value)}
         />
 
-        <button onClick={generatePrompt}>Generate Prompt</button>
+  <button type="button" onClick={generatePrompt}>Generate Prompt</button>
 
         <div id="outputBox">
           <p id="info">Click again on Generate prompt to get more effective prompts.</p>
           <p id="output">{output}</p>
           <div className="output-actions">
-            <button onClick={copyPrompt}>Copy</button>
-            <button onClick={toggleHistory} className="history-btn">
+            <button type="button" onClick={copyPrompt}>Copy</button>
+            <button type="button" onClick={toggleHistory} className="history-btn">
               <i className="fa-solid fa-history"></i> History ({promptHistory.length})
             </button>
           </div>
@@ -301,7 +301,7 @@ function App() {
             <div className="history-panel">
               <div className="history-header">
                 <h3>Recent Prompts</h3>
-                <button onClick={clearHistory} className="clear-history">
+                <button type="button" onClick={clearHistory} className="clear-history">
                   <i className="fa-solid fa-trash"></i>
                 </button>
               </div>
@@ -343,7 +343,7 @@ function App() {
           </div>
         </div>
         
-        <button className="back-button" onClick={() => setCurrentView('landing')}>
+        <button type="button" className="back-button" onClick={() => setCurrentView('landing')}>
           ← Back to Home
         </button>
       </div>
