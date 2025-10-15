@@ -146,10 +146,7 @@ function App() {
     setShowHistory(!showHistory);
   };
 
-  const useHistoryPrompt = (prompt) => {
-    setOutput(prompt);
-    setShowHistory(false);
-  };
+  // removed useHistoryPrompt: history items will set output inline
 
   const clearHistory = () => {
     setPromptHistory([]);
@@ -314,7 +311,7 @@ function App() {
                       <div className="history-content">
                         <span className="history-category">{item.category}</span>
                         <span className="history-time">{item.timestamp}</span>
-                        <p className="history-prompt" onClick={() => useHistoryPrompt(item.prompt)}>
+                        <p className="history-prompt" onClick={() => { setOutput(item.prompt); setShowHistory(false); }}>
                           {item.prompt}
                         </p>
                       </div>
