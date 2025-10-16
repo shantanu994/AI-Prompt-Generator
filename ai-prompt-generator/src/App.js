@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import { fetchSuggestions } from './services/suggestService';
 
 function App() {
   const [currentView, setCurrentView] = useState('landing');
@@ -153,6 +154,18 @@ function App() {
     setShowHistory(false);
   };
 
+  const suggestPrompt = async () => {
+    try {
+      const data = await fetchSuggestions({ input: inputText, category });
+      // Assume the proxy returns a text suggestion in data.suggestion or data.text
+      const suggestion = data.suggestion || data.text || JSON.stringify(data);
+      setOutput(suggestion);
+    } catch (e) {
+      console.error('Suggest failed', e);
+      setOutput('Suggestion failed. See console for details.');
+    }
+  };
+
   const LandingPage = () => (
     <div className={`landing-page ${isDarkMode ? 'dark-mode' : ''}`}>
       <nav className="navbar">
@@ -282,7 +295,10 @@ function App() {
           onChange={(e) => setInputText(e.target.value)}
         />
 
-  <button type="button" onClick={generatePrompt}>Generate Prompt</button>
+  <div className="generate-row">
+    <button type="button" onClick={generatePrompt}>Generate Prompt</button>
+    <button type="button" onClick={suggestPrompt} className="suggest-btn">Suggest</button>
+  </div>
 
         <div id="outputBox">
           <p id="info">Click again on Generate prompt to get more effective prompts.</p>
