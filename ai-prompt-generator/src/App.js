@@ -122,14 +122,7 @@ function App() {
       };
       setPromptHistory(prev => [historyItem, ...prev.slice(0, 9)]); // Keep last 10 prompts
       
-      // Add generated class for animation
-      const outputElement = document.getElementById('output');
-      if (outputElement) {
-        outputElement.classList.add('generated');
-        setTimeout(() => {
-          outputElement.classList.remove('generated');
-        }, 800);
-      }
+      // animations removed: no class toggling
     }, 100);
   };
 

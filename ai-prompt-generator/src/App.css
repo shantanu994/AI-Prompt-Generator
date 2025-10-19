@@ -1,4 +1,4 @@
-/* Landing Page Styles */
+/* Landing Page Styles (animations and transitions removed) */
 .landing-page {
   font-family: "segoe UI", sans-serif;
   margin: 0;
@@ -7,18 +7,6 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100vh;
-  animation: fadeIn 0.8s ease-in;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .navbar {
@@ -28,70 +16,26 @@
   position: relative;
   font-family: "bebas neue", sans-serif;
   color: black;
-  transition: all 0.3s ease;
-}
-
-.navbar:hover {
-  color: white;
-  text-shadow: 0 4px 12px black;
-  transform: scale(1.02);
 }
 
 .container {
   display: flex;
   align-items: center;
-  animation: slideInFromLeft 1s ease-out;
-}
-
-@keyframes slideInFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 
 .side-image {
   width: 400px;
   height: 400px;
-  
   border-radius: 8px;
   margin-left: 100px;
   margin-right: 200px;
   border: 1px solid black;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  animation: slideInFromRight 1s ease-out;
-}
-
-@keyframes slideInFromRight {
-  from {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.side-image:hover {
-  transform: scale(1.1) rotate(2deg);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .text-content {
   font-size: 30px;
   margin-left: 30px;
   font-family: "segoe UI", sans-serif;
-  transition: all 0.3s ease;
-}
-
-.text-content:hover {
-  text-shadow: 0 4px 12px white;
-  transform: translateY(-5px);
 }
 
 #about {
@@ -102,24 +46,6 @@
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: all 0.4s ease;
-  animation: fadeInUp 1.2s ease-out;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-#about:hover {
-  box-shadow: 0 12px 30px rgba(255, 182, 193, 0.4);
-  transform: translateY(-5px);
 }
 
 #about h2 {
@@ -145,39 +71,13 @@
 .social-links a {
   margin: 0 10px;
   display: inline-block;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border-radius: 50%;
   padding: 5px;
-}
-
-.social-links a:hover {
-  transform: scale(1.3) rotate(10deg);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
 }
 
 .next-button {
   text-align: center;
   margin-top: 90px;
-  animation: bounceIn 1.5s ease-out;
-}
-
-@keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.3);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-  70% {
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 
 .next-button button {
@@ -188,7 +88,6 @@
   border-radius: 25px;
   color: white;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
 }
@@ -201,7 +100,6 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s;
 }
 
 .next-button button:hover::before {
@@ -209,12 +107,11 @@
 }
 
 .next-button button:hover {
-  transform: translateY(-3px) scale(1.05);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   background: linear-gradient(120deg, #667eea, #764ba2);
 }
 
-/* Generator Page Styles */
+/* Generator Page Styles (animations and transitions removed) */
 .generator-page {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(120deg, #FFDEE9, #B5FFFC);
@@ -225,27 +122,23 @@
   min-height: 100vh;
   margin: 0;
   position: relative;
-  animation: fadeIn 0.8s ease-in;
 }
 
 .generator-container {
   background: #fff;
-  height: 600px;
+  height: 950px;
   padding: 30px;
   border-radius: 20px;
   text-align: center;
   width: 90%;
   max-width: 500px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  animation: slideInFromLeft 1s ease-out;
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.95);
 }
 
 .generator-container:hover {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  transform: translateY(-5px);
 }
 
 #image {
@@ -253,22 +146,10 @@
   height: 700px;
   border-radius: 50%;
   margin-left: 100px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  animation: slideInFromRight 1s ease-out, float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
 }
 
 #image:hover {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-  transform: scale(1.05) rotate(5deg);
 }
 
 .generator-container h1 {
@@ -279,18 +160,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: slideDown 0.8s ease-out;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .generator-container select, 
@@ -302,16 +171,13 @@
   width: 80%;
   border-radius: 12px;
   border: 2px solid #e0e0e0;
-  transition: all 0.3s ease;
   background: rgba(255, 255, 255, 0.9);
 }
 
 .generator-container select:focus,
 .generator-container input:focus {
   border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
   outline: none;
-  transform: translateY(-2px);
 }
 
 .generator-container button {
@@ -319,7 +185,6 @@
   color: white;
   border: none;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -335,7 +200,6 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s;
 }
 
 .generator-container button:hover::before {
@@ -343,18 +207,12 @@
 }
 
 .generator-container button:hover {
-  transform: translateY(-3px) scale(1.05);
   box-shadow: 0 10px 25px rgba(255, 126, 95, 0.4);
   background: linear-gradient(120deg, #ff6b6b, #4ecdc4);
 }
 
-.generator-container button:active {
-  transform: translateY(-1px) scale(1.02);
-}
-
 #outputBox {
   margin-top: 20px;
-  animation: fadeInUp 0.6s ease-out;
 }
 
 #output {
@@ -369,7 +227,6 @@
   box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
   font-size: 16px;
   line-height: 1.6;
-  transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -389,7 +246,6 @@
   border-radius: 15px;
   z-index: -1;
   opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
 #output:hover::before {
@@ -397,32 +253,11 @@
 }
 
 #output:hover {
-  transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   color: #2c3e50;
 }
 
-#output.generated {
-  animation: promptAppear 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-@keyframes promptAppear {
-  0% {
-    opacity: 0;
-    transform: scale(0.8) translateY(20px);
-  }
-  50% {
-    transform: scale(1.05) translateY(-5px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
+/* Info box */
 #info {
   font-size: 14px;
   color: #666;
@@ -431,18 +266,6 @@
   background: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   border-left: 4px solid #667eea;
-  animation: slideInFromTop 0.6s ease-out;
-}
-
-@keyframes slideInFromTop {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .links {
@@ -452,14 +275,7 @@
   border-radius: 15px;
   border: none;
   margin-top: 15px;
-  transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-}
-
-.links:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-  background: linear-gradient(135deg, #764ba2, #667eea);
 }
 
 .back-button {
@@ -469,18 +285,15 @@
   font-size: 14px !important;
   width: auto !important;
   border-radius: 25px !important;
-  transition: all 0.3s ease !important;
 }
 
 .back-button:hover {
-  transform: translateY(-3px) scale(1.05) !important;
   box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4) !important;
 }
 
 /* App Container */
 .App {
   text-align: center;
-  transition: all 0.3s ease;
 }
 
 /* Dark Mode Styles */
@@ -496,13 +309,7 @@
   color: white;
   font-size: 20px;
   cursor: pointer;
-  transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-}
-
-.dark-mode-toggle:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
 }
 
 .generator-toggle {
@@ -513,12 +320,6 @@
   color: #667eea;
 }
 
-.dark-mode .generator-toggle {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-/* Dark Mode for Landing Page */
 .landing-page.dark-mode {
   background: linear-gradient(120deg, #1a1a2e, #16213e);
   color: white;
@@ -528,17 +329,8 @@
   color: white;
 }
 
-.dark-mode .navbar:hover {
-  color: #a5b4fc;
-  text-shadow: 0 4px 12px #a5b4fc;
-}
-
 .dark-mode .text-content {
   color: white;
-}
-
-.dark-mode .text-content:hover {
-  text-shadow: 0 4px 12px #a5b4fc;
 }
 
 .dark-mode #about {
@@ -547,19 +339,10 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.dark-mode #about:hover {
-  box-shadow: 0 12px 30px rgba(165, 180, 252, 0.3);
-}
-
 .dark-mode .next-button button {
   background: linear-gradient(120deg, #667eea, #764ba2);
 }
 
-.dark-mode .next-button button:hover {
-  background: linear-gradient(120deg, #5a67d8, #805ad5);
-}
-
-/* Dark Mode for Generator Page */
 .generator-page.dark-mode {
   background: linear-gradient(120deg, #1a1a2e, #16213e);
 }
@@ -577,19 +360,9 @@
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-.dark-mode .generator-container select:focus,
-.dark-mode .generator-container input:focus {
-  border-color: #a5b4fc;
-  box-shadow: 0 0 0 3px rgba(165, 180, 252, 0.2);
-}
-
 .dark-mode #output {
   background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
   color: white;
-}
-
-.dark-mode #output.generated {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .dark-mode #info {
@@ -600,10 +373,6 @@
 
 .dark-mode .links {
   background: linear-gradient(135deg, #4a5568, #2d3748);
-}
-
-.dark-mode .links:hover {
-  background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
 /* History Panel Styles */
@@ -622,13 +391,7 @@
   border-radius: 8px !important;
   cursor: pointer !important;
   font-size: 14px !important;
-  transition: all 0.3s ease !important;
   width: auto !important;
-}
-
-.history-btn:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4) !important;
 }
 
 .history-panel {
@@ -639,12 +402,6 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   max-height: 300px;
   overflow-y: auto;
-  animation: slideDown 0.3s ease-out;
-}
-
-.dark-mode .history-panel {
-  background: rgba(50, 50, 70, 0.95);
-  color: white;
 }
 
 .history-header {
@@ -656,18 +413,10 @@
   padding-bottom: 10px;
 }
 
-.dark-mode .history-header {
-  border-bottom-color: rgba(255, 255, 255, 0.2);
-}
-
 .history-header h3 {
   margin: 0;
   color: #667eea;
   font-size: 18px;
-}
-
-.dark-mode .history-header h3 {
-  color: #a5b4fc;
 }
 
 .clear-history {
@@ -678,12 +427,6 @@
   width: 35px;
   height: 35px;
   cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.clear-history:hover {
-  background: #ff5252;
-  transform: scale(1.1);
 }
 
 .history-list {
@@ -696,19 +439,8 @@
   background: #f8f9fa;
   border-radius: 10px;
   padding: 12px;
-  transition: all 0.3s ease;
   cursor: pointer;
   border-left: 4px solid #667eea;
-}
-
-.dark-mode .history-item {
-  background: rgba(70, 70, 90, 0.8);
-  border-left-color: #a5b4fc;
-}
-
-.history-item:hover {
-  transform: translateX(5px);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
 }
 
 .history-content {
@@ -733,10 +465,6 @@
   align-self: flex-end;
 }
 
-.dark-mode .history-time {
-  color: #bbb;
-}
-
 .history-prompt {
   margin: 5px 0 0 0;
   font-size: 14px;
@@ -744,19 +472,11 @@
   color: #333;
 }
 
-.dark-mode .history-prompt {
-  color: #e2e8f0;
-}
-
 .no-history {
   text-align: center;
   color: #888;
   font-style: italic;
   margin: 20px 0;
-}
-
-.dark-mode .no-history {
-  color: #bbb;
 }
 
 /* Responsive Design */
