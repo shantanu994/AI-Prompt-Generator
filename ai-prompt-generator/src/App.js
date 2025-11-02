@@ -109,10 +109,10 @@ function App() {
 
     const finalPrompt = randomTemplate.replace(/\{input\}/g, userInput);
     
-    // Add a slight delay for better UX
+    
     setTimeout(() => {
       setOutput(finalPrompt);
-      // Add to history
+      
       const historyItem = {
         id: Date.now(),
         prompt: finalPrompt,
